@@ -1,4 +1,29 @@
-module.exports = {
+var versions = {
+	"1.4":"53",
+	"1.3":"52",
+	"1.2":"51",
+	"1.1":"50",
+	"1.0":"49",
+	"0.37":"49",
+	"0.36":"47",
+	"0.35":"45",
+	"0.34":"45",
+	"0.33":"45",
+	"0.32":"45",
+	"0.31":"44",
+	"0.30":"44",
+	"0.29":"43",
+	"0.28":"43",
+	"0.27":"42",
+	"0.26":"42",
+	"0.25":"42",
+	"0.24":"41",
+	"0.23":"41",
+	"0.22":"41",
+	"0.21":"40",
+	"0.20":"39"
+};
+var fullVersions = {
 	"1.4.14":"53.0.2785.143",
 	"1.4.13":"53.0.2785.143",
 	"1.4.12":"54.0.2840.51",
@@ -119,4 +144,18 @@ module.exports = {
 	"0.20.2":"39.0.2171.65",
 	"0.20.1":"39.0.2171.65",
 	"0.20.0":"39.0.2171.65"
+};
+var electronToChrome = function (query) {
+  return versions[query] || undefined;
+}
+
+var electronToChromeBL = function (query) {
+  return versions[query] ? "Chrome >= " + versions[query] : undefined;
+}
+
+module.exports = {
+  versions: versions,
+  fullVersions: fullVersions,
+  electronToChrome: electronToChrome,
+  electronToChromeBL: electronToChromeBL
 };
