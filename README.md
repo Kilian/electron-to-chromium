@@ -5,4 +5,4 @@ This repository provides a mapping of Electron versions to the Chromium version 
 import the index.js file and it returns an object with key:value mapping of Electron:Chromium versions.
 
 ## Updating
-To update the list, run `node build.js`. Requires internet access as it downloads from the canonical list of Electron versions.
+To update the list, run `npm run build.js`. Requires internet access as it downloads from the canonical list of Electron versions.
