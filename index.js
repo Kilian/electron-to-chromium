@@ -145,17 +145,17 @@ var fullVersions = {
 	"0.20.1":"39.0.2171.65",
 	"0.20.0":"39.0.2171.65"
 };
-var electronToChrome = function (query) {
-  return versions[query] || undefined;
+var electronToChromium = function (query) {
+  return query.split('.').length > 2 ? fullVersions[query] : versions[query] || undefined;
 }
 
-var electronToChromeBL = function (query) {
+var electronToBrowserList = function (query) {
   return versions[query] ? "Chrome >= " + versions[query] : undefined;
 }
 
 module.exports = {
   versions: versions,
   fullVersions: fullVersions,
-  electronToChrome: electronToChrome,
-  electronToChromeBL: electronToChromeBL
+  electronToChromium: electronToChromium,
+  electronToBrowserList: electronToBrowserList
 };

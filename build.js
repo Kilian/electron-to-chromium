@@ -8,7 +8,6 @@ request('https://atom.io/download/electron/index.json', function(error, response
     const versions = {};
     const fullVersions = {};
 
-
     allElectronVersions.forEach(electron => {
       // simple list
       const simpleVersion = electron.version.split(".")[0] + "." + electron.version.split(".")[1];
@@ -28,7 +27,7 @@ request('https://atom.io/download/electron/index.json', function(error, response
         throw error;
       }
       data = data.replace(/{versions}/, makePrintable(versions))
-              .replace(/{fullVersions}/, makePrintable(fullVersions));
+                 .replace(/{fullVersions}/, makePrintable(fullVersions));
 
       fs.writeFile("index.js", data, function (error) {
         if (error) {
