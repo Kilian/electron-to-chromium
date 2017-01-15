@@ -32,7 +32,7 @@ An object with all Electron versions as keys and their respective Chromium versi
 ```
 
 #### electronToChromium(query)
-Properties:
+Arguments:
 * Query: string, required. A major or full electron version string.
 
 A function that returns the corresponding Chromium version for a given Electron function. Returns a string.
@@ -56,7 +56,7 @@ If a query does not match a Chromium version, it will return `undefined`.
 ```
 
 #### electronToBrowserList(query)
-Properties:
+Arguments:
 * Query: string, required. A major Electron version string.
 
 A function that returns a [Browserlist](https://github.com/ai/browserslist) query that matches the given major Electron version. Returns a string.
