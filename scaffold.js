@@ -1,11 +1,20 @@
 var versions = {versions};
 var fullVersions = {fullVersions};
 var electronToChromium = function (query) {
-  return query.split('.').length > 2 ? fullVersions[query] : versions[query] || undefined;
+  var number = getQueryString(query);
+  return number.split('.').length > 2 ? fullVersions[number] : versions[number] || undefined;
 }
 
 var electronToBrowserList = function (query) {
-  return versions[query] ? "Chrome >= " + versions[query] : undefined;
+  var number = getQueryString(query);
+  return versions[number] ? "Chrome >= " + versions[number] : undefined;
+}
+
+var getQueryString = function (query) {
+  var number = query;
+  if (query === 1) { number = "1.0" }
+  if (typeof query === 'number') { number += ''; }
+  return number;
 }
 
 module.exports = {

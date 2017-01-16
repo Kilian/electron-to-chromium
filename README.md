@@ -34,7 +34,7 @@ console.log(versions['1.4.11']);
 
 #### electronToChromium(query)
 Arguments:
-* Query: string, required. A major or full electron version string.
+* Query: string or number, required. A major or full electron version.
 
 A function that returns the corresponding Chromium version for a given Electron function. Returns a string.
 
@@ -61,7 +61,7 @@ var chromeVersion = e2c.electronToChromium('9000');
 
 #### electronToBrowserList(query)
 Arguments:
-* Query: string, required. A major Electron version string.
+* Query: string or number, required. A major Electron version.
 
 A function that returns a [Browserlist](https://github.com/ai/browserslist) query that matches the given major Electron version. Returns a string.
 
