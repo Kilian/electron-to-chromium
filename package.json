@@ -4,7 +4,8 @@
   "description": "Provides a list of electron-to-chromium version mappings",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "update": "node automated-update.js"
   },
   "repository": {
     "type": "git",
