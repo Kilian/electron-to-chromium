@@ -79,6 +79,22 @@ var query = e2c.electronToBrowserList('9000');
 // query is undefined
 ```
 
+### importing just versions or fullVersions
+Both the versions and the fullVersions list can be imported on their own, if file-size is a concern.
+
+### versions
+
+```js
+var versions = require('electron-to-chromium/versions');
+```
+
+### fullVersions
+
+```js
+var fullVersions = require('electron-to-chromium/full-versions');
+```
+
+
 ## Updating
 This package will be updated with each new Electron release.
 
