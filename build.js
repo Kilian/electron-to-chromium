@@ -8,6 +8,11 @@ request('https://atom.io/download/electron/index.json', function(error, response
     const versions = {};
     const fullVersions = {};
 
+    const makePrintable = mapping => JSON.stringify(mapping)
+                                      .replace(/,/g, ",\n\t")
+                                      .replace(/{/g, "{\n\t")
+                                      .replace(/}/g, "\n}");
+
     allElectronVersions.forEach(electron => {
       // simple list
       const simpleVersion = electron.version.split(".")[0] + "." + electron.version.split(".")[1];
@@ -17,26 +22,17 @@ request('https://atom.io/download/electron/index.json', function(error, response
       fullVersions[electron.version] = electron.chrome;
     });
 
-    const makePrintable = mapping => JSON.stringify(mapping)
-                                      .replace(/,/g, ",\n\t")
-                                      .replace(/{/g, "{\n\t")
-                                      .replace(/}/g, "\n}");
-
-    fs.readFile("./scaffold.js", {encoding: 'utf8'}, (error, data) => {
+    fs.writeFile("versions.js", `module.exports = ${makePrintable(versions)};`, function (error) {
       if (error) {
         throw error;
       }
-      data = data.replace(/{versions}/, makePrintable(versions))
-                 .replace(/{fullVersions}/, makePrintable(fullVersions));
-
-      fs.writeFile("index.js", data, function (error) {
-        if (error) {
-          throw error;
-        }
-        console.log("New index.js generated and saved");
-      });
     });
 
+    fs.writeFile("full-versions.js", `module.exports = ${makePrintable(fullVersions)};`, function (error) {
+      if (error) {
+        throw error;
+      }
+    });
   } else {
     throw error;
   }

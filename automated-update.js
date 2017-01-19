@@ -13,7 +13,7 @@ exec('npm run build', {silent:true});
 exec('git status', {silent:true}, function(code, stdout, stderr) {
   const indexHasUpdated = stdout.split('\n')[2] !== 'nothing to commit, working directory clean';
   if(indexHasUpdated) {
-    exec('git add index.js', {silent:true});
+    exec('git add versions.js full-versions.js', {silent:true});
     exec('git commit -m "generate new version"', {silent:true});
     exec('npm version patch', {silent:true});
     exec('git push origin master', {silent:true});
