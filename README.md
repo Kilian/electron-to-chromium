@@ -61,6 +61,26 @@ var chromeVersion = e2c.electronToChromium('9000');
 // chromeVersion is undefined
 ```
 
+#### chromiumToElectron(query)
+Arguments:
+* Query: string or number, required. A major or full chromium version.
+
+Returns a string with the corresponding Electron version for a given Chromium query.
+
+If you provide it with a major Chromium version, it will return a major Electron version:
+
+```js
+var electronVersion = e2c.chromiumToElectron('54');
+// electronVersion is "1.4"
+```
+
+If you provide it with a full Chrome version, it will return an array of full Electron versions.
+
+```js
+var electronVersions = e2c.chromiumToElectron('56.0.2924.87');
+// electronVersions is ["1.6.3", "1.6.2", "1.6.1", "1.6.0"]
+```
+
 #### electronToBrowserList(query) **DEPRECATED**
 Arguments:
 * Query: string or number, required. A major Electron version.
