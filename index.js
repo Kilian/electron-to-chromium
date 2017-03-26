@@ -1,6 +1,6 @@
 var versions = require('./versions');
 var fullVersions = require('./full-versions');
-var chromeVersions = require('./chrome-versions');
+var chromiumVersions = require('./chromium-versions');
 var fullChromeVersions = require('./full-chrome-versions');
 
 var electronToChromium = function (query) {
@@ -28,8 +28,8 @@ var getQueryString = function (query) {
 module.exports = {
   versions: versions,
   fullVersions: fullVersions,
-  chromeVersions: chromeVersions,
-  fullChromeVersions: fullChromeVersions,
+  chromiumVersions: chromiumVersions,
+  fullChromiumVersions: fullChromiumVersions,
   electronToChromium: electronToChromium,
   electronToBrowserList: electronToBrowserList,
   chromiumToElectron: chromiumToElectron

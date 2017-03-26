@@ -7,53 +7,37 @@ request('https://atom.io/download/electron/index.json', function(error, response
     const allElectronVersions = JSON.parse(body);
     const electronVersions = {};
     const electronFullVersions = {};
-    const chromeVersions = {};
-    const fullChromeVersions = {};
+    const chromiumVersions = {};
+    const chromiumFullVersions = {};
 
-    const makePrintable = mapping => JSON.stringify(mapping)
-                                      .replace(/,/g, ",\n\t")
-                                      .replace(/{/g, "{\n\t")
-                                      .replace(/}/g, "\n}");
+    const makePrintable = mapping => JSON.stringify(mapping, null, "\t");
 
     allElectronVersions.forEach(electron => {
       // simple list
       const simpleVersion = electron.version.split(".")[0] + "." + electron.version.split(".")[1];
       const chromeVersion = electron.chrome.split(".")[0];
       electronVersions[simpleVersion] = chromeVersion;
-      chromeVersions[chromeVersion] = simpleVersion;
+      chromiumVersions[chromeVersion] = simpleVersion;
 
       // explicit list
       electronFullVersions[electron.version] = electron.chrome;
-      if (!fullChromeVersions[electron.chrome]) {
-        fullChromeVersions[electron.chrome] = [];
+      if (!chromiumFullVersions[electron.chrome]) {
+        chromiumFullVersions[electron.chrome] = [];
       }
-      fullChromeVersions[electron.chrome].push(electron.version);
+      chromiumFullVersions[electron.chrome].push(electron.version);
     });
 
-    fs.writeFile("versions.js", `module.exports = ${makePrintable(electronVersions)};`, function (error) {
-      if (error) {
-        throw error;
-      }
+    [
+      {list: electronVersions, file: "versions.js"},
+      {list: electronFullVersions, file: "full-versions.js"},
+      {list: chromiumVersions, file: "chromium-versions.js"},
+      {list: chromiumFullVersions, file: "full-chromium-versions.js"},
+    ].forEach((obj) => {
+      fs.writeFile(obj.file, `module.exports = ${makePrintable(obj.list)};`, function (error) {
+        if (error) {
+          throw error;
+        }
+      });
     });
-
-    fs.writeFile("chrome-versions.js", `module.exports = ${makePrintable(chromeVersions)};`, function (error) {
-      if (error) {
-        throw error;
-      }
-    });
-
-    fs.writeFile("full-versions.js", `module.exports = ${makePrintable(electronFullVersions)};`, function (error) {
-      if (error) {
-        throw error;
-      }
-    });
-
-    fs.writeFile("full-chrome-versions.js", `module.exports = ${JSON.stringify(fullChromeVersions, null, 2)};`, function (error) {
-      if (error) {
-        throw error;
-      }
-    });
-  } else {
-    throw error;
   }
 })
