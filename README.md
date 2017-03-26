@@ -34,6 +34,25 @@ console.log(versions['1.4.11']);
 // returns "53.0.2785.143"
 ```
 
+#### chromiumVersions
+An object with all _major_ Chromium versions as keys and their respective major Electron version as string value.
+
+```js
+var versions = e2c.chromiumVersions;
+console.log(versions['54']);
+// returns "1.4"
+```
+
+#### fullChromiumVersions
+
+An object with all Chromium versions as keys and their respective Electron versions as an array of strings.
+
+```js
+var versions = e2c.fullChromiumVersions;
+console.log(versions['54.0.2840.101']);
+// returns ["1.5.1", "1.5.0"]
+```
+
 #### electronToChromium(query)
 Arguments:
 * Query: string or number, required. A major or full electron version.
@@ -81,6 +100,14 @@ var electronVersions = e2c.chromiumToElectron('56.0.2924.87');
 // electronVersions is ["1.6.3", "1.6.2", "1.6.1", "1.6.0"]
 ```
 
+
+If a query does not match an Electron version, it will return `undefined`.
+
+```js
+var electronVersion = e2c.chromiumToElectron('10');
+// chromeVersion is undefined
+```
+
 #### electronToBrowserList(query) **DEPRECATED**
 Arguments:
 * Query: string or number, required. A major Electron version.
@@ -103,8 +130,8 @@ var query = e2c.electronToBrowserList('9000');
 // query is undefined
 ```
 
-### importing just versions or fullVersions
-Both the versions and the fullVersions list can be imported on their own, if file-size is a concern.
+### importing just versions, fullVersions, chromiumVersions and fullChromiumVersions
+all list can be imported on their own, if file-size is a concern.
 
 ### versions
 
@@ -117,7 +144,17 @@ var versions = require('electron-to-chromium/versions');
 ```js
 var fullVersions = require('electron-to-chromium/full-versions');
 ```
+### chromiumVersions
 
+```js
+var chromiumVersions = require('electron-to-chromium/chromium-versions');
+```
+
+### fullChromiumVersions
+
+```js
+var fullChromiumVersions = require('electron-to-chromium/full-chromium-versions');
+```
 
 ## Updating
 This package will be updated with each new Electron release.
