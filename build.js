@@ -5,35 +5,39 @@ const fs = require('fs');
 request('https://atom.io/download/electron/index.json', function(error, response, body) {
   if (!error && response.statusCode == 200) {
     const allElectronVersions = JSON.parse(body);
-    const versions = {};
-    const fullVersions = {};
+    const electronVersions = {};
+    const electronFullVersions = {};
+    const chromiumVersions = {};
+    const chromiumFullVersions = {};
 
-    const makePrintable = mapping => JSON.stringify(mapping)
-                                      .replace(/,/g, ",\n\t")
-                                      .replace(/{/g, "{\n\t")
-                                      .replace(/}/g, "\n}");
+    const makePrintable = mapping => JSON.stringify(mapping, null, "\t");
 
     allElectronVersions.forEach(electron => {
       // simple list
       const simpleVersion = electron.version.split(".")[0] + "." + electron.version.split(".")[1];
-      versions[simpleVersion] = electron.chrome.split(".")[0];
+      const chromeVersion = electron.chrome.split(".")[0];
+      electronVersions[simpleVersion] = chromeVersion;
+      chromiumVersions[chromeVersion] = simpleVersion;
 
       // explicit list
-      fullVersions[electron.version] = electron.chrome;
+      electronFullVersions[electron.version] = electron.chrome;
+      if (!chromiumFullVersions[electron.chrome]) {
+        chromiumFullVersions[electron.chrome] = [];
+      }
+      chromiumFullVersions[electron.chrome].push(electron.version);
     });
 
-    fs.writeFile("versions.js", `module.exports = ${makePrintable(versions)};`, function (error) {
-      if (error) {
-        throw error;
-      }
+    [
+      {list: electronVersions, file: "versions.js"},
+      {list: electronFullVersions, file: "full-versions.js"},
+      {list: chromiumVersions, file: "chromium-versions.js"},
+      {list: chromiumFullVersions, file: "full-chromium-versions.js"},
+    ].forEach((obj) => {
+      fs.writeFile(obj.file, `module.exports = ${makePrintable(obj.list)};`, function (error) {
+        if (error) {
+          throw error;
+        }
+      });
     });
-
-    fs.writeFile("full-versions.js", `module.exports = ${makePrintable(fullVersions)};`, function (error) {
-      if (error) {
-        throw error;
-      }
-    });
-  } else {
-    throw error;
   }
 })
