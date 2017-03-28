@@ -1,7 +1,7 @@
 var versions = require('./versions');
 var fullVersions = require('./full-versions');
 var chromiumVersions = require('./chromium-versions');
-var fullChromeVersions = require('./full-chrome-versions');
+var fullChromiumVersions = require('./full-chromium-versions');
 
 var electronToChromium = function (query) {
   var number = getQueryString(query);
