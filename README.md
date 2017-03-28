@@ -159,3 +159,5 @@ var fullChromiumVersions = require('electron-to-chromium/full-chromium-versions'
 This package will be updated with each new Electron release.
 
 To update the list, run `npm run build.js`. Requires internet access as it downloads from the canonical list of Electron versions.
+
+to verify correct behaviour, run `npm test`;
