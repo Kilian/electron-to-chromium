@@ -17,7 +17,7 @@ var e2c = require('electron-to-chromium');
 The Electron-to-Chromium object has 4 properties to use:
 
 #### versions
-An object of key-value pairs of all _major_ Electron versions as the key, and the respective major Chromium version as the value.
+An object of key-value pairs of a _major_ Electron version as the key, and the respective major Chromium version as the value.
 
 ```js
 var versions = e2c.versions;
@@ -26,7 +26,7 @@ console.log(versions['1.4']);
 ```
 
 #### fullVersions
-An object of key-value pairs of all Electron versions as the key, and the respective full Chromium version as the value.
+An object of key-value pairs of a Electron version as the key, and the respective full Chromium version as the value.
 
 ```js
 var versions = e2c.fullVersions;
@@ -35,7 +35,7 @@ console.log(versions['1.4.11']);
 ```
 
 #### chromiumVersions
-An object of key-value pairs of all _major_ Chromium versions as the key, and the respective major Electron version as the value.
+An object of key-value pairs of a _major_ Chromium version as the key, and the respective major Electron version as the value.
 
 ```js
 var versions = e2c.chromiumVersions;
@@ -44,7 +44,7 @@ console.log(versions['54']);
 ```
 
 #### fullChromiumVersions
-An object of key-value pairs of all _major_ Chromium versions as the key, and an array of the respective major Electron versions as the value.
+An object of key-value pairs of a Chromium version as the key, and an array of the respective major Electron versions as the value.
 
 ```js
 var versions = e2c.fullChromiumVersions;
