@@ -12,7 +12,8 @@
   "scripts": {
     "build": "node build.js",
     "update": "node automated-update.js",
-    "test": "ava"
+    "test": "nyc ava",
+    "report": "nyc report --reporter=html"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
   "license": "ISC",
   "devDependencies": {
     "ava": "^0.18.2",
+    "nyc": "^10.2.0",
     "request": "^2.79.0",
     "shelljs": "^0.7.6"
   }
