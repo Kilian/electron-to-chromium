@@ -10,7 +10,7 @@ var electronToChromium = function (query) {
 
 var chromiumToElectron = function (query) {
   var number = getQueryString(query);
-  return number.split('.').length > 2 ? fullChromeVersions[number] : chromeVersions[number] || undefined;
+  return number.split('.').length > 2 ? fullChromiumVersions[number] : chromiumVersions[number] || undefined;
 };
 
 var electronToBrowserList = function (query) {
