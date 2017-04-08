@@ -13,7 +13,7 @@
     "build": "node build.js",
     "update": "node automated-update.js",
     "test": "nyc ava",
-    "report": "nyc report --reporter=html"
+    "report": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {
     "type": "git",
