@@ -13,7 +13,7 @@ exec('npm run build && npm test', {silent:true}, function(code, stdout, stderr) 
   if(code === 1) {
 
     exec('echo "' + stdout + stderr + '"| aha | mail -s "[e2c] Automated update failed" root');
-    echo('text failed, exit.');
+    echo('test failed, exit.');
     exit(1);
 
   } else {
