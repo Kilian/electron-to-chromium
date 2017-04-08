@@ -12,7 +12,7 @@
   "scripts": {
     "build": "node build.js",
     "update": "node automated-update.js",
-    "test": "nyc ava",
+    "test": "nyc ava --verbose",
     "report": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "repository": {

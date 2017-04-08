@@ -9,10 +9,10 @@ if (!which('npm')) {
   exit(1);
 }
 
-exec('npm run build && npm test', {}, function(code, stdout, stderr) {
+exec('npm run build && npm test', {silent:true}, function(code, stdout, stderr) {
   if(code === 1) {
 
-    exec('echo "' + stdout + stderr + '" | mail -s "electron-to-chromium automated update failed" root');
+    exec('echo "' + stdout + stderr + '"| aha | mail -s "[e2c] Automated update failed" root');
     echo('text failed, exit.');
     exit(1);
 
