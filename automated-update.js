@@ -9,7 +9,7 @@ if (!which('npm')) {
   exit(1);
 }
 
-exec('npm run build && npm test', {silent:true}, function(code, stdout, stderr) {
+exec('npm update electron-releases && npm run build && npm test', {silent:true}, function(code, stdout, stderr) {
   if(code === 1) {
 
     exec('echo "' + stdout + stderr + '"| aha | mail -a "Content-type: text/html" -s "[e2c] Automated update failed" root');

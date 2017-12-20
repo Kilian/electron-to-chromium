@@ -32,5 +32,8 @@
     "nyc": "^10.2.0",
     "request": "^2.79.0",
     "shelljs": "^0.7.6"
+  },
+  "dependencies": {
+    "electron-releases": "^2.1.0"
   }
 }
