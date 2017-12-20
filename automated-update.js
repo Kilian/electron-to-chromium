@@ -18,8 +18,8 @@ exec('npm update electron-releases && npm run build && npm test', {silent:true},
 
   } else {
 
-    exec('git status', {silent:true}, function(code, stdout, stderr) {
-      const indexHasUpdated = stdout.split('\n')[2] !== 'nothing to commit, working directory clean';
+    exec('git status --porcelain', {silent:true}, function(code, stdout, stderr) {
+      const indexHasUpdated = !!stdout.length;
       if(indexHasUpdated) {
         exec('git add versions.js full-versions.js chromium-versions.js full-chromium-versions.js', {silent:true});
         exec('git commit -m "generate new version"', {silent:true});
