@@ -7,7 +7,8 @@
     "versions.js",
     "full-versions.js",
     "chromium-versions.js",
-    "full-chromium-versions.js"
+    "full-chromium-versions.js",
+    "LICENSE"
   ],
   "scripts": {
     "build": "node build.js",
