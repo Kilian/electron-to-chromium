@@ -13,12 +13,14 @@ allElectronVersions
   .filter(x => x.deps)
   .forEach(item => {
     const {deps: electron} = item;
-
-    // simple list
-    const simpleVersion = electron.version.split(".")[0] + "." + electron.version.split(".")[1];
-    const chromeVersion = electron.chrome.split(".")[0];
-    electronVersions[simpleVersion] = chromeVersion;
-    chromiumVersions[chromeVersion] = simpleVersion;
+    
+    if (!electron.version.includes("nightly")) {
+      // simple list
+      const simpleVersion = electron.version.split(".")[0] + "." + electron.version.split(".")[1];
+      const chromeVersion = electron.chrome.split(".")[0];
+      electronVersions[simpleVersion] = chromeVersion;
+      chromiumVersions[chromeVersion] = simpleVersion;
+    }
 
     // explicit list
     electronFullVersions[electron.version] = electron.chrome;
