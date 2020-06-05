@@ -30,7 +30,7 @@
   "devDependencies": {
     "ava": "^1.1.0",
     "codecov": "^3.1.0",
-    "electron-releases": "^3.434.0",
+    "electron-releases": "^3.435.0",
     "nyc": "^13.3.0",
     "request": "^2.88.0",
     "shelljs": "^0.7.6"
