@@ -1,4 +1,4 @@
-import test from 'ava';
+const test = require('ava');
 const e2c = require("./index.js");
 
 // test functions
