@@ -11,9 +11,10 @@ const makePrintable = mapping => JSON.stringify(mapping, null, "\t");
 
 allElectronVersions
   .filter(x => x.deps)
+  .reverse()
   .forEach(item => {
     const {deps: electron} = item;
-    
+
     if (!electron.version.includes("nightly")) {
       // simple list
       const simpleVersion = electron.version.split(".")[0] + "." + electron.version.split(".")[1];
