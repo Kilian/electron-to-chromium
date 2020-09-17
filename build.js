@@ -20,7 +20,7 @@ allElectronVersions
       const simpleVersion = electron.version.split(".")[0] + "." + electron.version.split(".")[1];
       const chromeVersion = electron.chrome.split(".")[0];
       electronVersions[simpleVersion] = chromeVersion;
-      chromiumVersions[chromeVersion] = simpleVersion;
+      chromiumVersions[chromeVersion] = chromiumVersions[chromeVersion] || simpleVersion;
     }
 
     // explicit list
