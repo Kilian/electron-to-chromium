@@ -1,3 +1,5 @@
+TEST TEST TEST
+
 v1.3.0
   * Additionally include chromium to electron mappings
 
