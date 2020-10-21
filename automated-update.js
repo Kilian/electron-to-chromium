@@ -20,6 +20,7 @@ exec('npm update electron-releases && npm run build && npm test', {silent:true},
 
     exec('git add package.json package-lock.json', {silent:true});
     exec('git commit -m "bump electron-releases"', {silent:true});
+    exec('git push origin master', {silent:true});
 
     exec('git status --porcelain', {silent:true}, function(code, stdout, stderr) {
       const indexHasUpdated = !!stdout.length;
