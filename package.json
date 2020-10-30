@@ -29,7 +29,7 @@
   "license": "ISC",
   "devDependencies": {
     "ava": "^3.8.2",
-    "codecov": "^3.1.0",
+    "codecov": "^3.8.0",
     "electron-releases": "^3.526.0",
     "nyc": "^15.1.0",
     "request": "^2.88.0",
