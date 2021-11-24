@@ -32,12 +32,17 @@ allElectronVersions
 });
 
 [
-  {list: electronVersions, file: "versions.js"},
-  {list: electronFullVersions, file: "full-versions.js"},
-  {list: chromiumVersions, file: "chromium-versions.js"},
-  {list: chromiumFullVersions, file: "full-chromium-versions.js"},
+  {list: electronVersions, file: "versions"},
+  {list: electronFullVersions, file: "full-versions"},
+  {list: chromiumVersions, file: "chromium-versions"},
+  {list: chromiumFullVersions, file: "full-chromium-versions"},
 ].forEach((obj) => {
-  fs.writeFile(obj.file, `module.exports = ${makePrintable(obj.list)};`, function (error) {
+  fs.writeFile(`${obj.file}.js`, `module.exports = ${makePrintable(obj.list)};`, function (error) {
+    if (error) {
+      throw error;
+    }
+  });
+  fs.writeFile(`${obj.file}.json`, JSON.stringify(obj.list), function (error) {
     if (error) {
       throw error;
     }
