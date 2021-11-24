@@ -8,6 +8,10 @@
     "full-versions.js",
     "chromium-versions.js",
     "full-chromium-versions.js",
+    "versions.json",
+    "full-versions.json",
+    "chromium-versions.json",
+    "full-chromium-versions.json",
     "LICENSE"
   ],
   "scripts": {
@@ -32,7 +36,7 @@
     "codecov": "^3.8.0",
     "electron-releases": "^3.868.0",
     "nyc": "^15.1.0",
-    "request": "^2.88.0",
+    "request": "^2.65.0",
     "shelljs": "^0.8.4"
   }
 }
