@@ -25,7 +25,7 @@ exec('npm update electron-releases && npm run build && npm test', {silent:true},
     exec('git status --porcelain', {silent:true}, function(code, stdout, stderr) {
       const indexHasUpdated = !!stdout.length;
       if(indexHasUpdated) {
-        exec('git add versions.js full-versions.js chromium-versions.js full-chromium-versions.js', {silent:true});
+        exec('git add versions.js full-versions.js chromium-versions.js full-chromium-versions.js versions.json full-versions.json chromium-versions.json full-chromium-versions.json', {silent:true});
         exec('git commit -m "generate new version"', {silent:true});
         exec('npm version patch', {silent:true});
         exec('git push origin master', {silent:true});
