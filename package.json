@@ -32,7 +32,7 @@
   "author": "Kilian Valkhof",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^4.0.1",
+    "ava": "^5.1.1",
     "codecov": "^3.8.0",
     "electron-releases": "^3.1171.0",
     "nyc": "^15.1.0",
