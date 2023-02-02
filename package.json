@@ -15,7 +15,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "build": "node build.js",
+    "build": "node build.mjs",
     "update": "node automated-update.js",
     "test": "nyc ava --verbose",
     "report": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
@@ -27,6 +27,8 @@
   "keywords": [
     "electron",
     "chrome",
+    "chromium",
+    "browserslist",
     "browserlist"
   ],
   "author": "Kilian Valkhof",
@@ -34,9 +36,9 @@
   "devDependencies": {
     "ava": "^4.0.1",
     "codecov": "^3.8.0",
-    "electron-releases": "^3.1171.0",
+    "compare-versions": "^6.0.0-rc.1",
+    "node-fetch": "^2.6.7",
     "nyc": "^15.1.0",
-    "request": "^2.65.0",
     "shelljs": "^0.8.4"
   }
 }
