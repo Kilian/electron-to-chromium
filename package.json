@@ -34,11 +34,11 @@
   "author": "Kilian Valkhof",
   "license": "ISC",
   "devDependencies": {
-    "ava": "^4.0.1",
-    "codecov": "^3.8.0",
+    "ava": "^5.1.1",
+    "codecov": "^3.8.2",
     "compare-versions": "^6.0.0-rc.1",
-    "node-fetch": "^2.6.7",
+    "node-fetch": "^3.3.0",
     "nyc": "^15.1.0",
-    "shelljs": "^0.8.4"
+    "shelljs": "^0.8.5"
   }
 }
