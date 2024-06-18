@@ -1,6 +1,6 @@
 {
   "name": "electron-to-chromium",
-  "version": "1.4.804",
+  "version": "1.4.805",
   "description": "Provides a list of electron-to-chromium version mappings",
   "main": "index.js",
   "files": [
