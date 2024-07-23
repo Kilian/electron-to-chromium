@@ -1,3 +1,6 @@
+v1.5.0
+  * No longer includes nightly versions
+
 v1.3.0
   * Additionally include chromium to electron mappings
 
