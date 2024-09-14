@@ -2124,6 +2124,7 @@ module.exports = {
 		"33.0.0-alpha.2",
 		"33.0.0-alpha.3",
 		"33.0.0-alpha.4",
-		"33.0.0-alpha.5"
+		"33.0.0-alpha.5",
+		"33.0.0-alpha.6"
 	]
 };
