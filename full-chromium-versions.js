@@ -2176,6 +2176,7 @@ module.exports = {
 		"34.0.0-alpha.3",
 		"34.0.0-alpha.4",
 		"34.0.0-alpha.5",
-		"34.0.0-alpha.6"
+		"34.0.0-alpha.6",
+		"34.0.0-alpha.7"
 	]
 };
