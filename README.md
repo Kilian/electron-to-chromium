@@ -8,7 +8,9 @@
 
 ---
 
-# Electron-to-Chromium [![npm](https://img.shields.io/npm/v/electron-to-chromium.svg)](https://www.npmjs.com/package/electron-to-chromium) [![travis](https://img.shields.io/travis/Kilian/electron-to-chromium/master.svg)](https://travis-ci.org/Kilian/electron-to-chromium) [![npm-downloads](https://img.shields.io/npm/dm/electron-to-chromium.svg)](https://www.npmjs.com/package/electron-to-chromium) [![codecov](https://codecov.io/gh/Kilian/electron-to-chromium/branch/master/graph/badge.svg)](https://codecov.io/gh/Kilian/electron-to-chromium)[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKilian%2Felectron-to-chromium.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FKilian%2Felectron-to-chromium?ref=badge_shield)
+# Electron-to-Chromium
+
+[![npm](https://img.shields.io/npm/v/electron-to-chromium.svg)](https://www.npmjs.com/package/electron-to-chromium) [![travis](https://img.shields.io/travis/Kilian/electron-to-chromium/master.svg)](https://travis-ci.org/Kilian/electron-to-chromium) [![npm-downloads](https://img.shields.io/npm/dm/electron-to-chromium.svg)](https://www.npmjs.com/package/electron-to-chromium) [![network dependents](https://dependents.info/Kilian/electron-to-chromium/badge)](https://dependents.info/Kilian/electron-to-chromium) [![codecov](https://codecov.io/gh/Kilian/electron-to-chromium/branch/master/graph/badge.svg)](https://codecov.io/gh/Kilian/electron-to-chromium)[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKilian%2Felectron-to-chromium.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FKilian%2Felectron-to-chromium?ref=badge_shield)
 
 This repository provides a mapping of Electron versions to the Chromium version that it uses.
 
@@ -20,6 +22,11 @@ This package is used in [Browserslist](https://github.com/ai/browserslist), so y
     <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px">
   </a>
 
+## Used by
+
+<a href="https://dependents.info/Kilian/electron-to-chromium">
+  <img src="https://dependents.info/Kilian/electron-to-chromium/image" />
+</a>
 
 ## Install
 Install using `npm install electron-to-chromium`.
