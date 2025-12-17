@@ -43,10 +43,5 @@ await fetch("https://electronjs.org/headers/index.json")
           throw error;
         }
       });
-      fs.writeFile(`${obj.file}.json`, JSON.stringify(obj.list), function (error) {
-        if (error) {
-          throw error;
-        }
-      });
     });
   });
