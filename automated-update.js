@@ -20,7 +20,7 @@ exec('npm run build && npm test', {silent:true}, function(code, stdout, stderr) 
 
     exec('git add package.json package-lock.json', {silent:true});
     exec('git commit -m "bump electron-releases"', {silent:true});
-    exec('git push origin master', {silent:true});
+    exec('git push origin main', {silent:true});
 
     exec('git status --porcelain', {silent:true}, function(code, stdout, stderr) {
       const indexHasUpdated = !!stdout.length;
@@ -28,10 +28,9 @@ exec('npm run build && npm test', {silent:true}, function(code, stdout, stderr) 
         exec('git add versions.js full-versions.js chromium-versions.js full-chromium-versions.js versions.json full-versions.json chromium-versions.json full-chromium-versions.json', {silent:true});
         exec('git commit -m "generate new version"', {silent:true});
         exec('npm version patch', {silent:true});
-        exec('git push origin master', {silent:true});
+        exec('git push origin main', {silent:true});
         exec('git push --tags', {silent:true});
-        exec('npm publish', {silent:true});
-        echo('new version released.');
+        echo('new version tagged and pushed, npm publish triggered via GitHub Actions.');
           exit(0);
       } else {
         echo('nothing to do.');
