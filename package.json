@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kilian/electron-to-chromium.git"
+    "url": "git+https://github.com/Kilian/electron-to-chromium.git"
   },
   "keywords": [
     "electron",
