@@ -9,6 +9,8 @@ updates:
       interval: daily
       time: '08:00'
       timezone: Europe/Amsterdam
+    cooldown:
+      default-days: 7
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -16,3 +18,5 @@ updates:
       interval: daily
       time: '08:00'
       timezone: Europe/Amsterdam
+    cooldown:
+      default-days: 7
